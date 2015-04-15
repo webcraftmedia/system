@@ -1,7 +1,7 @@
 <?php
 namespace SYSTEM\DBD;
 
-class SYS_SAIMOD_TEXT_GETTEXTS extends \SYSTEM\DB\QP {
+class SYS_SAIMOD_TEXT_GETTEXTS_ALL extends \SYSTEM\DB\QQ {
     protected static function query(){
         return new \SYSTEM\DB\QQuery(get_class(),
             //pg            
@@ -11,6 +11,5 @@ class SYS_SAIMOD_TEXT_GETTEXTS extends \SYSTEM\DB\QP {
                 FROM system_text_tag 
                 LEFT JOIN system_text ON system_text_tag.id = system_text.id
                 LEFT JOIN system_user as a ON system_text.author = a.id
-                LEFT JOIN system_user as ae ON system_text.author_edit = ae.id
-                WHERE tag = ?;'
+                LEFT JOIN system_user as ae ON system_text.author_edit = ae.id;'
 );}}
