@@ -4,5 +4,5 @@
         <th>Name</th>
         <th>Value</th>
     </tr>
-    ${basics}
+    ${database}
 </table>
