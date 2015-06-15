@@ -1,7 +1,7 @@
 <?php
 namespace SYSTEM\DBD;
 
-class SYS_SAIMOD_TODO_LIST extends \SYSTEM\DB\QP {
+class SYS_SAIMOD_TODO_LIST_MINE extends \SYSTEM\DB\QP {
     protected static function query(){
         return new \SYSTEM\DB\QQuery(get_class(),
 //pg            
@@ -19,8 +19,8 @@ class SYS_SAIMOD_TODO_LIST extends \SYSTEM\DB\QP {
     ' LEFT JOIN '.\SYSTEM\DBD\system_user::NAME_MYS.' as creator ON todo.'.\SYSTEM\DBD\system_todo::FIELD_USER.'=creator.'.\SYSTEM\DBD\system_user::FIELD_ID.
     ' LEFT JOIN '.\SYSTEM\DBD\system_user::NAME_MYS.' as assignee ON assign.'.\SYSTEM\DBD\system_todo_assign::FIELD_USER.'=assignee.'.\SYSTEM\DBD\system_user::FIELD_ID.
     ' WHERE todo.'.\SYSTEM\DBD\system_todo::FIELD_STATE.' = ?'.
+    ' AND assign.'.\SYSTEM\DBD\system_todo_assign::FIELD_USER.' = ?'.
     ' AND (todo.'.\SYSTEM\DBD\system_todo::FIELD_MESSAGE.' LIKE ? OR creator.'.\SYSTEM\DBD\system_user::FIELD_USERNAME.' LIKE ? OR  assignee.'.\SYSTEM\DBD\system_user::FIELD_USERNAME.' LIKE ?)'.
-    ' ORDER BY case when assign.'.\SYSTEM\DBD\system_todo_assign::FIELD_USER.' = ? then 1 else 2 end'.
 ') as a'.
 ' GROUP BY a.todo_id'.
 ' ORDER BY a.'.\SYSTEM\DBD\system_todo::FIELD_PRIORITY.' DESC, a.'.\SYSTEM\DBD\system_todo::FIELD_TYPE.' DESC, a.'.\SYSTEM\DBD\system_todo::FIELD_COUNT.' DESC, a.'.\SYSTEM\DBD\system_todo::FIELD_TIME.' DESC'
