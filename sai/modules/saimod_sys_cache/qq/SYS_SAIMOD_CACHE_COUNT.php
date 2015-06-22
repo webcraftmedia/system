@@ -1,11 +1,11 @@
 <?php
 namespace SYSTEM\DBD;
-class SYS_CRON_LIST extends \SYSTEM\DB\QQ {
+class SYS_SAIMOD_CACHE_COUNT extends \SYSTEM\DB\QQ {
     public static function get_class(){return \get_class();}
     public static function pqsql(){return
-'SELECT * FROM '.\SYSTEM\DBD\system_cron::NAME_PG.';';
+'SELECT COUNT(*) as "count" FROM system.cache';
     }
     public static function mysql(){return
-'SELECT * FROM '.\SYSTEM\DBD\system_cron::NAME_MYS.';';
+'SELECT COUNT(*) as count FROM system_cache';
     }
 }
