@@ -12,9 +12,9 @@
 namespace SYSTEM\PAGE;
 
 /**
- * Page Interface provided by System to describe page functions.
+ * DefaultPage Interface provided by System to describe default page functions.
  */
-interface Page {
+interface DefaultPage {
     /**
      * Html content of the page
      *
@@ -35,20 +35,4 @@ interface Page {
      * @return array Returns array with filepaths of css to be loaded.
      */
     public static function css();
-    
-    /**
-     * Tile of the page
-     *
-     * @return string Returns the title for the page.
-     */
-    public static function title();
-    
-    /**
-     * Meta of the page
-     * Array Key is used as Meta to be written. The string is Split by the last
-     * "_". meta_samplepage_description will resolve to meta['description']
-     *
-     * @return array Returns array with metastrings for the page.
-     */
-    public static function meta();
 }
