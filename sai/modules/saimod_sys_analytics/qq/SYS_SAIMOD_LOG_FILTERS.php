@@ -12,9 +12,9 @@
 namespace SYSTEM\SQL;
 
 /**
- * QQ to insert a token
+ * QQ to find all classfilters from system_log
  */
-class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
+class SYS_SAIMOD_LOG_FILTERS extends \SYSTEM\DB\QQ {
     /**
      * Get Classname of the QQ
      * 
@@ -23,12 +23,15 @@ class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
     public static function get_class(){return \get_class();}
     
     /**
-     * SQL Insert Types
+     * Get QQs PostgreSQL Query String
      * 
-     * @return string Returns sql Insert Types
+     * @return string Returns PostgreSQL Query String
      */
-    public static function types(){return
-'ssssi';
+    public static function pgsql(){return
+'SELECT '.\SYSTEM\SQL\system_log::FIELD_CLASS.
+' FROM '.\SYSTEM\SQL\system_log::NAME_PG.
+' GROUP BY '.\SYSTEM\SQL\system_log::FIELD_CLASS.
+' ORDER BY '.\SYSTEM\SQL\system_log::FIELD_CLASS.';';
     }
     
     /**
@@ -37,7 +40,9 @@ class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
      * @return string Returns MYSQL Query String
      */
     public static function mysql(){return
-'INSERT INTO system_token (token, class, expire, data, request_user)'.
-' VALUES (?, ?, FROM_UNIXTIME(?), ?, ?);';
-    }    
+'SELECT '.\SYSTEM\SQL\system_log::FIELD_CLASS.
+' FROM '.\SYSTEM\SQL\system_log::NAME_MYS.
+' GROUP BY '.\SYSTEM\SQL\system_log::FIELD_CLASS.
+' ORDER BY '.\SYSTEM\SQL\system_log::FIELD_CLASS.';';
+    }
 }

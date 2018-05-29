@@ -12,9 +12,9 @@
 namespace SYSTEM\SQL;
 
 /**
- * QQ to insert a token
+ * QQ to get a token
  */
-class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
+class SYS_TOKEN_DUPLICATE extends \SYSTEM\DB\QP {
     /**
      * Get Classname of the QQ
      * 
@@ -23,21 +23,11 @@ class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
     public static function get_class(){return \get_class();}
     
     /**
-     * SQL Insert Types
-     * 
-     * @return string Returns sql Insert Types
-     */
-    public static function types(){return
-'ssssi';
-    }
-    
-    /**
      * Get QQs MYSQL Query String
      * 
      * @return string Returns MYSQL Query String
      */
     public static function mysql(){return
-'INSERT INTO system_token (token, class, expire, data, request_user)'.
-' VALUES (?, ?, FROM_UNIXTIME(?), ?, ?);';
-    }    
+'SELECT * FROM system_token WHERE class = ? AND data = ?;';
+    }
 }

@@ -12,9 +12,9 @@
 namespace SYSTEM\SQL;
 
 /**
- * QQ to insert a token
+ * QQ to truncate data from system_log
  */
-class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
+class SYS_SAIMOD_LOG_TRUNCATE extends \SYSTEM\DB\QQ {
     /**
      * Get Classname of the QQ
      * 
@@ -23,12 +23,12 @@ class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
     public static function get_class(){return \get_class();}
     
     /**
-     * SQL Insert Types
+     * Get QQs PostgreSQL Query String
      * 
-     * @return string Returns sql Insert Types
+     * @return string Returns PostgreSQL Query String
      */
-    public static function types(){return
-'ssssi';
+    public static function pgsql(){return             
+'TRUNCATE '.\SYSTEM\SQL\system_log::NAME_PG.';';
     }
     
     /**
@@ -36,8 +36,7 @@ class SYS_TOKEN_INSERT extends \SYSTEM\DB\QP {
      * 
      * @return string Returns MYSQL Query String
      */
-    public static function mysql(){return
-'INSERT INTO system_token (token, class, expire, data, request_user)'.
-' VALUES (?, ?, FROM_UNIXTIME(?), ?, ?);';
-    }    
+    public static function mysql(){return 
+'TRUNCATE '.\SYSTEM\SQL\system_log::NAME_MYS.';';
+    }
 }
