@@ -310,7 +310,7 @@ class security {
         self::startSession();
         $user = self::getUser();
         if($user && $user->id){
-            \SYSTEM\SQL\SYS_SECURITY_UPDATE_LASTACTIVE::Q1(array(NULL,$user->id));}
+            \SYSTEM\SQL\SYS_SECURITY_UPDATE_LASTACTIVE::QI(array(NULL,$user->id));}
         session_destroy();
         return $json_result ? \SYSTEM\LOG\JsonResult::ok() : true;}
     

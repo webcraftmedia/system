@@ -31,7 +31,7 @@ class default_page implements \SYSTEM\PAGE\DefaultPage {
                     $result[] = $menu;}
                }
         }
-        usort($result, function($a, $b){return $a->order > $b->order;});
+        usort($result, function($a, $b){return $a->order - $b->order;});
         
         $html = '';
         foreach($result as $menu){
@@ -55,7 +55,7 @@ class default_page implements \SYSTEM\PAGE\DefaultPage {
                     $result[] = $menu;}
                }
         }
-        usort($result, function($a, $b){return $a->order > $b->order;});
+        usort($result, function($a, $b){return $a->order - $b->order;});
         
         $html = '';
         foreach($result as $menu){
