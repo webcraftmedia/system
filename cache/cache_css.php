@@ -65,7 +65,7 @@ class cache_css {
             \LIB\lib_minify::php();
             \LIB\lib_scssphp::php();
             $minifier = new \MatthiasMullie\Minify\CSS();
-            $sccs     = new \Leafo\ScssPhp\Compiler();
+            $sccs     = new \ScssPhp\ScssPhp\Compiler();
             foreach($files as $f){
                 // Determin CSS/SCSS based on file extension
                 $path = $f->SERVERPATH();
