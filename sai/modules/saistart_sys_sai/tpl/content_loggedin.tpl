@@ -74,7 +74,7 @@
         <div class="row sai_padding_top_20 sai_padding_bottom_20">
             <div class="col-md-6">
                 <div class="card h-100">
-                    <div class="card-header"><a href="#!log(stats)">${basic_analytics}</a></div>
+                    <div class="card-header"><a href="#!analytics">${basic_analytics}</a></div>
                     <div class="card-body">${analytics}</div>
                 </div> 
             </div>

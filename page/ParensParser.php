@@ -27,6 +27,8 @@ class ParensParser
     /** start of text-buffer */
     protected $buffer_start = null;
 
+    private $length = null;
+
     /**
      * Parse the given string and split by () brackets and |
      *

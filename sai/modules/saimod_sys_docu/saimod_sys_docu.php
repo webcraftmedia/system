@@ -30,7 +30,7 @@ class saimod_sys_docu extends \SYSTEM\SAI\sai_module {
             $config = \SYSTEM\DOCU\docu::get($package);
             $vars['tabopts'] .= \SYSTEM\PAGE\replace::replaceFile((new \SYSTEM\PSAI('modules/saimod_sys_docu/tpl/tabopt.tpl'))->SERVERPATH(), array('tab_id' => $package,'tab_id_pretty' => $config['title'], 'active' => $package == $cat ? 'active' : ''));}
         return \SYSTEM\PAGE\replace::replaceFile((new \SYSTEM\PSAI('modules/saimod_sys_docu/tpl/saimod_sys_docu.tpl'))->SERVERPATH(), $vars);
-    }  
+    }
     
     /**
      * Generate the HTML Documentation

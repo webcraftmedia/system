@@ -35,7 +35,7 @@ class locale {
             $user = \SYSTEM\SECURITY\security::getUser();
             if($user->locale != $lang){
                 $user->locale = $lang;
-                \SYSTEM\SQL\SYS_LOCALE_SET_LOCALE::Q1(array($lang, $user->id));}
+                \SYSTEM\SQL\SYS_LOCALE_SET_LOCALE::QI(array($lang, $user->id));}
         }
         return true;
     }
