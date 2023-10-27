@@ -25,10 +25,8 @@ class cache {
      */
     public static function get($cache, $ident,$header = false){
         $result = \SYSTEM\SQL\SYS_CACHE_CHECK::Q1(array($cache,$ident));
-        if(!$result){
+        if(!$result || $result['data'] == NULL || !file_exists($result['data'])){
             return NULL;}
-        if(!file_exists($result['data'])){
-            return NULL;}    
         
         if($header){
             if(\SYSTEM\HEADER::available($result['type'])){
@@ -60,7 +58,7 @@ class cache {
         \fwrite($file, $data);
         \fclose($file);    
         
-        $result = \SYSTEM\SQL\SYS_CACHE_PUT::Q1(array($cache,$ident, $type, $path));                
+        $result = \SYSTEM\SQL\SYS_CACHE_PUT::QI(array($cache,$ident, $type, $path));                
         return $result ? $data : NULL;
     }
     
