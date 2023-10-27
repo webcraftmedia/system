@@ -16,9 +16,9 @@
         </select>
     </td>
     <td>
-        <button type="button" class="btn-sm btn btn-warning btn_cron_status" _class="${class}" _i="${i}"><span class="fa fa-repeat" aria-hidden="true"></span></button>
-        <button type="button" class="btn-sm btn btn-success btn_cron_edit" _class="${class}" _min="${min}" _hour="${hour}" _day="${day}" _day_week="${day_week}" _month="${month}"><span class="fa fa-pencil" aria-hidden="true"></span></button>
-        <button type="button" class="btn-sm btn btn-success btn_cron_run" _class="${class}"><span class="fa fa-clock-o" aria-hidden="true"></span></button>
+        <button type="button" class="btn-sm btn btn-warning btn_cron_status" _class="${class}" _i="${i}"><span class="fa fa-redo" aria-hidden="true"></span></button>
+        <button type="button" class="btn-sm btn btn-success btn_cron_edit" _class="${class}" _min="${min}" _hour="${hour}" _day="${day}" _day_week="${day_week}" _month="${month}"><span class="fa fa-edit" aria-hidden="true"></span></button>
+        <button type="button" class="btn-sm btn btn-success btn_cron_run" _class="${class}"><span class="fa fa-clock" aria-hidden="true"></span></button>
         <button type="button" class="btn-sm btn btn-danger btn_cron_del" _class="${class}"><span class="fa fa-trash" aria-hidden="true"></span></button>
     </td>
 </tr>

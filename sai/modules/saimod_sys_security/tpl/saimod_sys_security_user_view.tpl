@@ -47,7 +47,7 @@
                         <input class="input-medium" id="input_pw_new2" type="password" placeholder="${basic_password_new}" size="20"/>
                     </td>
                     <td>
-                        <button style="width: 100%;" type="submit" id="btn_change_password" class="btn-sm btn btn-success" user="${username}" email="${email}"><span class="fa fa-pencil" aria-hidden="true"></span>&nbsp;&nbsp;${basic_change_password}</button>
+                        <button style="width: 100%;" type="submit" id="btn_change_password" class="btn-sm btn btn-success" user="${username}" email="${email}"><span class="fa fa-edit" aria-hidden="true"></span>&nbsp;&nbsp;${basic_change_password}</button>
                     </td>
                 </tr>
                 <tr>
@@ -69,7 +69,7 @@
                         <input class="input-medium" id="input_new_user" type="text" placeholder="${basic_username_new}" size="20"/>
                     </td>
                     <td>
-                        <button style="width: 100%;" type="submit" id="btn_rename_account" class="btn-sm btn btn-danger" user="${username}" email="${email}"><span class="fa fa-pencil" aria-hidden="true"></span>&nbsp;&nbsp;${basic_rename}</button>
+                        <button style="width: 100%;" type="submit" id="btn_rename_account" class="btn-sm btn btn-danger" user="${username}" email="${email}"><span class="fa fa-edit" aria-hidden="true"></span>&nbsp;&nbsp;${basic_rename}</button>
                     </td>
                 </tr>
                 <tr>

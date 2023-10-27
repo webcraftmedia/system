@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 sai_padding_10 bg-primary">
-        <h4 class="sai_margin_off">&nbsp;<span class="fa fa-clock-o" aria-hidden="true"></span>&nbsp;&nbsp;${sai_cron_title}</h4>
+        <h4 class="sai_margin_off">&nbsp;<span class="fa fa-clock" aria-hidden="true"></span>&nbsp;&nbsp;${sai_cron_title}</h4>
     </div>
     <div class="col-md-12 sai_padding_off">
         &nbsp;Last Visit: ${last_visit}<br/>

@@ -5,7 +5,7 @@
         <a data-toggle="tooltip" title="<img src='${url}'/>" href="${url}" target="_blank" id="tooltip_${cat}_${i}">${url}</a>
     </td>
     <td>
-        <button type="submit" class="btn-warning btn btn-sm imgrnbtn" style="margin: 1px;;" cat="${cat}" id="${name}" textfield="#renametext_${cat}_${i}"><span class="fa fa-pencil" aria-hidden="true"></span></button>
+        <button type="submit" class="btn-warning btn btn-sm imgrnbtn" style="margin: 1px;;" cat="${cat}" id="${name}" textfield="#renametext_${cat}_${i}"><span class="fa fa-edit" aria-hidden="true"></span></button>
     </td>
     <td>
         <input type="text" id="renametext_${cat}_${i}" class="form-control" style="width: 100px; margin:0;" placeholder="new name...">
