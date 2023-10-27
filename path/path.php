@@ -16,11 +16,11 @@ namespace SYSTEM;
  */
 class PATH {
     /** array Variable to store the base path object of the path object */
-    private $basepath = NULL;
+    protected $basepath = NULL;
     /** array Variable to store the path of the path object */
-    private $path = NULL;
+    protected $path = NULL;
     /** array Variable to store the sub path of the path object */
-    private $subpath = NULL;
+    protected $subpath = NULL;
     
     /**
      * Construct the path with given basepath, path and subpath
