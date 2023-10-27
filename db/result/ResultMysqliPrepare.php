@@ -30,7 +30,7 @@ class ResultMysqliPrepare extends \SYSTEM\DB\Result{
      * @param ressource $res Ressource of the Database Result-Set
      * @param ressource $connection Connection on which the Result-Set was returned
      */
-    public function __construct($res,$connection){        
+    public function __construct($res,$connection){
         $this->res = $res;
         $this->connection = $connection;
 
@@ -41,16 +41,15 @@ class ResultMysqliPrepare extends \SYSTEM\DB\Result{
             //throw new \Exception("Could not retrieve meta for prepare statement");}
             return;}
         
-        $ref = [];
         while ($field = $this->meta->fetch_field() ) {
-            $this->binds[$field->table.'.'.$field->name] = &$this->binds[$field->table.'.'.$field->name];
-            $ref[$field->table.'.'.$field->name] = &$this->binds[$field->table.'.'.$field->name];
+            $ref = $field->table.'.'.$field->name;
+            $$ref = null;
+            $this->binds[$ref] = &$$ref;
         } //fix for ambiguous fieldnames
 
         \mysqli_free_result($this->meta);
         
-        call_user_func_array(array($this->res, 'bind_result'), $ref); //you need 2 append the parameters - thats the right way to do that.
-        $this->res->store_result();
+        $this->res->bind_result(...array_values($this->binds));
     }
 
     /**
@@ -65,8 +64,8 @@ class ResultMysqliPrepare extends \SYSTEM\DB\Result{
      * @return null Returns null
      */
     public function close(){
-        mysqli_stmt_free_result($this->res);
-        return mysqli_stmt_close($this->res);}
+        \mysqli_stmt_free_result($this->res);
+        return \mysqli_stmt_close($this->res);}
 
     /**
      * Counts the Lines in the Resultset
@@ -91,7 +90,7 @@ class ResultMysqliPrepare extends \SYSTEM\DB\Result{
      * @param int $result_type Mysql Fetch result Type
      * @return array Returns an array(object) containing the next line
      */
-    public function next($object = false, $result_type = MYSQLI_BOTH){        
+    public function next($object = false, $result_type = MYSQLI_BOTH){
         if(\mysqli_stmt_fetch($this->res)){
             foreach( $this->binds as $key=>$value ){
                 $row[substr($key, strpos($key, '.')+1)] = $value;} //fix for ambiguous fieldnames
