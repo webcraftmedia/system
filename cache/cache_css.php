@@ -72,7 +72,7 @@ class cache_css {
                 $tmp = explode(".", $path); //rediculus
                 if(strtolower(end($tmp)) == 'scss'){
                     // Compile SCSS
-                    $minifier->add($sccs->compile(file_get_contents($path)));
+                    $minifier->add($sccs->compileString(file_get_contents($path))->getCss());
                 } else {
                     // Normal CSS
                     $minifier->add($path);
