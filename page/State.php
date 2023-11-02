@@ -54,11 +54,6 @@ class State {
             if(\class_exists($row['php_class']) && \method_exists($row['php_class'], 'css') && \is_callable($row['php_class'].'::css')){
                 $row['css'] = array_merge($row['css'], \call_user_func($row['php_class'].'::css'));}
             $row['css'] = count($row['css']) > 0 ? array(\SYSTEM\CACHE\cache_css::minify($row['css'])) : array();
-            if(\class_exists($row['php_class']) && \method_exists($row['php_class'], 'scss') && \is_callable($row['php_class'].'::scss')){
-                $scss = \call_user_func($row['php_class'].'::scss');
-                foreach($scss as $s){
-                    $row['css'][] = \SYSTEM\CACHE\cache_scss::url($s);}
-            }
             if(\class_exists($row['php_class']) && \method_exists($row['php_class'], 'js') && \is_callable($row['php_class'].'::js')){
                 $row['js'] = array_merge($row['js'], \call_user_func($row['php_class'].'::js'));}
             $row['js'] = count($row['js']) > 0 ? array(\SYSTEM\CACHE\cache_js::minify($row['js'])) : array();
