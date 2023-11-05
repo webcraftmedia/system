@@ -28,7 +28,7 @@ class SYS_LOG_MONTH extends \SYSTEM\DB\QP {
      * @return string Returns PostgreSQL Query String
      */
     public static function pgsql(){return
-'SELECT * FROM '.\SYSTEM\SQL\system_log::NAME_PG.' WHERE EXTRACT(MONTH FROM time)::INTEGER = $1 AND EXTRACT(YEAR FROM time)::INTEGER = $2 ORDER BY time ASC LIMIT 1000;';
+'SELECT * FROM '.\SYSTEM\SQL\system_log::NAME_PG.' WHERE EXTRACT(MONTH FROM time)::INTEGER = $1 AND EXTRACT(YEAR FROM time)::INTEGER = $2 ORDER BY time ASC LIMIT 250;';
     }
     
     /**
@@ -37,6 +37,6 @@ class SYS_LOG_MONTH extends \SYSTEM\DB\QP {
      * @return string Returns MYSQL Query String
      */
     public static function mysql(){return
-'SELECT * FROM '.\SYSTEM\SQL\system_log::NAME_MYS.' WHERE MONTH(time) = ? AND YEAR(time) = ? ORDER BY time ASC LIMIT 1000;';
+'SELECT * FROM '.\SYSTEM\SQL\system_log::NAME_MYS.' WHERE MONTH(time) = ? AND YEAR(time) = ? ORDER BY time ASC LIMIT 250;';
     }
 }
