@@ -67,12 +67,12 @@ class cron_log2sqlite implements \SYSTEM\CRON\cronjob{
                             '(`ID`, `class`, `message`, `code`, `file`, `line`, `trace`, `ip`, `querytime`, `time`,'.
                             ' `server_name`, `server_port`, `request_uri`, `post`,'.
                             ' `http_referer`, `http_user_agent`, `user`, `thrown`)'.
-                            'VALUES ('.$row['ID'].', \''.\SQLite3::escapeString($row['class']).'\', \''.\SQLite3::escapeString($row['message']).'\', '.
-                                       $row['code'].', \''.\SQLite3::escapeString($row['file']).'\', '.$row['line'].', \''.\SQLite3::escapeString($row['trace']).'\', \''.
+                            'VALUES ('.$row['ID'].', \''.\SQLite3::escapeString($row['class'] ?: '').'\', \''.\SQLite3::escapeString($row['message'] ?: '').'\', '.
+                                       $row['code'].', \''.\SQLite3::escapeString($row['file'] ?: '').'\', '.$row['line'].', \''.\SQLite3::escapeString($row['trace'] ?: '').'\', \''.
                                        $row['ip'].'\', '.$row['querytime'].', \''.$row['time'].'\', \''.
-                                       \SQLite3::escapeString($row['server_name']).'\', '.($row['server_port'] ? $row['server_port'] : 'NULL').', \''.\SQLite3::escapeString($row['request_uri']).'\', \''.\SQLite3::escapeString($row['post']).'\', \''.
-                                       \SQLite3::escapeString($row['http_referer']).'\', \''.\SQLite3::escapeString($row['http_user_agent']).'\', '.($row['user'] ? $row['user'] : 'NULL').','.true.');')){
-                new \SYSTEM\LOG\ERROR('failed to insert into log archiev');
+                                       \SQLite3::escapeString($row['server_name'] ?: '').'\', '.($row['server_port'] ?: 'NULL').', \''.\SQLite3::escapeString($row['request_uri']).'\', \''.\SQLite3::escapeString($row['post'] ?: '').'\', \''.
+                                       \SQLite3::escapeString($row['http_referer'] ?: '').'\', \''.\SQLite3::escapeString($row['http_user_agent'] ?: '').'\', '.($row['user'] ?: 'NULL').','.true.');')){
+                new \SYSTEM\LOG\ERROR('failed to insert into log archive');
                 return cronstatus::CRON_STATUS_FAIL;    
             }
             //Delete single
@@ -82,7 +82,7 @@ class cron_log2sqlite implements \SYSTEM\CRON\cronjob{
         }
         set_time_limit(30);
         if(!$con->exec('end transaction')){
-            new \SYSTEM\LOG\ERROR('failed to insert into log archiev');
+            new \SYSTEM\LOG\ERROR('failed to insert into log archive');
             return cronstatus::CRON_STATUS_FAIL;};
         
         return cronstatus::CRON_STATUS_SUCCESFULLY;
