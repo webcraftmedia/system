@@ -20,7 +20,7 @@ class SYS_SAIMOD_TEXT_TEXT_FILTER extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class(self);}
+    public static function get_class(){return static::class;}
     
     /**
      * Get QQs MYSQL Query String

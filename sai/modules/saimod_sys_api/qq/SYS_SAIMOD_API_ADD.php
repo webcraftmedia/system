@@ -20,7 +20,7 @@ class SYS_SAIMOD_API_ADD extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class(self);}
+    public static function get_class(){return static::class;}
     
     /**
      * Get QQs PostgreSQL Query String
