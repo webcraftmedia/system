@@ -20,7 +20,7 @@ class SYS_TEXT_GET_ID_ADV extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class($this);}
+    public static function get_class(){return \get_class(self);}
     
     /**
      * Get QQs MYSQL Query String

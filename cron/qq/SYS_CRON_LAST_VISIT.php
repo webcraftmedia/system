@@ -20,7 +20,7 @@ class SYS_CRON_LAST_VISIT extends \SYSTEM\DB\QQ {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class($this);}
+    public static function get_class(){return \get_class(self);}
     
     /**
      * Get QQs PostgreSQL Query String

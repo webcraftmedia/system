@@ -20,7 +20,7 @@ class DATA_SYSTEM_API extends \SYSTEM\DB\QI {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class($this);}
+    public static function get_class(){return \get_class(self);}
     
     /**
      * Get paths of PostgreSQL compatible sql files

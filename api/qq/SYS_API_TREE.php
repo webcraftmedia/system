@@ -20,7 +20,7 @@ class SYS_API_TREE extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class($this);}
+    public static function get_class(){return \get_class(self);}
     
     /**
      * Get QQs PostgreSQL Query String

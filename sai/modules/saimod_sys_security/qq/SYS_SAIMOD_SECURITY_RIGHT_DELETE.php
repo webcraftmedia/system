@@ -20,7 +20,7 @@ class SYS_SAIMOD_SECURITY_RIGHT_DELETE extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class($this);}
+    public static function get_class(){return \get_class(self);}
     
     /**
      * Get QQs PostgreSQL Query String
