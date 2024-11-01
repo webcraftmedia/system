@@ -20,7 +20,7 @@ class SCHEMA_SYSTEM extends \SYSTEM\DB\QI {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class();}
+    public static function get_class(){return static::class;}
     
     /**
      * Get paths of PostgreSQL compatible sql files

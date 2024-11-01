@@ -20,7 +20,7 @@ class SYS_SAIMOD_TODO_CLOSE extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class();}
+    public static function get_class(){return static::class;}
     
     /**
      * Get QQs PostgreSQL Query String
