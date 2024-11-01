@@ -20,7 +20,7 @@ class SYS_SAIMOD_SECURITY_USER_LOG_COUNT extends \SYSTEM\DB\QP {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class();}
+    public static function get_class(){return \get_class($this);}
     
     /**
      * Get QQs PostgreSQL Query String

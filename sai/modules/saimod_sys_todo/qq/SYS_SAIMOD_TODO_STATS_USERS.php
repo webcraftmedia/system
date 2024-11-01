@@ -20,7 +20,7 @@ class SYS_SAIMOD_TODO_STATS_USERS extends \SYSTEM\DB\QQ {
      * 
      * @return string Returns classname
      */
-    public static function get_class(){return \get_class();}
+    public static function get_class(){return \get_class($this);}
     
     /**
      * Get QQs PostgreSQL Query String
