@@ -41,12 +41,12 @@ class saimod_sys_git extends \SYSTEM\SAI\sai_module {
             $git = $gits[$i];
             try{
                 $repo = \GIT\Git::open($git['path']);
-                $git['git_project'] = $repo->run('ls-remote --get-url').'<br><br>';
-                $git['git_project'] .= nl2br(htmlentities($repo->run('log --date=relative --graph -3')));
+                $git['git_url'] = $repo->run('ls-remote --get-url').'<br><br>';
+                $git['git_project'] = nl2br(htmlentities($repo->run('log --date=relative --graph -3')));
                 
                 $subs = explode("\n",$repo->run('config --file .gitmodules --get-regexp path'));
                 foreach($subs as $sub){
-                    if($sub == ''){
+                   if($sub == ''){
                         continue;}
                     $gits[] = array('title' => $git['title'].'/'.explode('.',$sub)[1],
                                     'path'  => $git['path'].preg_replace('/\s+/', '', explode('path ',$sub)[1]).'/');
