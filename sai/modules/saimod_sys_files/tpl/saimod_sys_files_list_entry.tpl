@@ -2,7 +2,7 @@
     <td>${name}</td>
     <td>${extension}</td>
     <td>
-        <a data-toggle="tooltip" title="<img src='${url}'/>" href="${url}" target="_blank" id="tooltip_${cat}_${i}">${url}</a>
+        <a data-toggle="tooltip" title="<img src='${url}' style='max-width: 250px; max-height: 250px;'/>" href="${url}" target="_blank" id="tooltip_${cat}_${i}">${url}</a>
     </td>
     <td>
         <button type="submit" class="btn-warning btn btn-sm imgrnbtn" style="margin: 1px;;" cat="${cat}" id="${name}" textfield="#renametext_${cat}_${i}"><span class="fa fa-edit" aria-hidden="true"></span></button>
