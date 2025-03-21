@@ -105,7 +105,9 @@ class ResultMysqliPrepare extends \SYSTEM\DB\Result{
      * @return bool Returns true or false
      */
     public function seek($row_number){
-        return \mysqli_stmt_data_seek($this->res,$row_number);}
+        mysqli_stmt_store_result($this->res);
+        \mysqli_stmt_data_seek($this->res,$row_number);
+    }
         
     public function insert_id(){
         return $this->connection->insert_id();
